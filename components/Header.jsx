@@ -1,4 +1,5 @@
 import Spline from "@splinetool/react-spline";
+import Image from "next/image";
 import React from "react";
 
 const Header = () => {
@@ -27,10 +28,11 @@ const Header = () => {
       </div>
 
       <div className="w-full h-2/4 md:h-full md:w-3/5 flex items-center justify-center relative -z-10">
-        <Spline
+        {/* <Spline
           className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start"
           scene="https://prod.spline.design/pvM5sSiYV2ivWraz/scene.splinecode"
-        />
+        /> */}
+        <Image src="/logo.gif" width={300} height={300} />
       </div>
     </header>
   );
