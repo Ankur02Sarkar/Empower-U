@@ -9,7 +9,7 @@ const Header = () => {
     >
       <div className="w-full h-2/4 md:h-full md:w-2/5 flex flex-col justify-center items-center md:items-start gap-8">
         <div className="flex flex-col gap-2">
-          <h1 className="text-4xl font-black md:text-8xl">Empower U</h1>
+          <h1 className="text-4xl font-black md:text-[5.5rem] leading-[5.5rem]">EmpowerU</h1>
           <h2 className="text-md md:text-2xl">Start growing today!</h2>
         </div>
         <p className="max-w-md text-sm md:text-base text-zinc-500">
@@ -31,10 +31,8 @@ const Header = () => {
           className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start"
           scene="https://prod.spline.design/pvM5sSiYV2ivWraz/scene.splinecode"
         /> */}
-        {/* <Image src="/jellyfish.svg" width={300} height={300} /> */}
-        <figure>
+        <figure className="w-full">
           <object type="image/svg+xml" data="/jellyfish.svg" alt="Animated swimming jellyfish" img="" width="100%">
-            <img src="/jellyfish.svg" alt="Animated swimming jellyfish" className="lightense-target" />
           </object>
         </figure>
       </div>
