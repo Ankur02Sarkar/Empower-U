@@ -25,106 +25,100 @@ const Credits = () => {
       <div className="flex flex-row">
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
 
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
 
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
       </div>
       <div className="flex flex-row">
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
 
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
 
         <PinContainer
           title={"Title"}
-          children={
-            <ChildComponent
-              name={"Ankur Sarkar"}
-              description={"Tumhara Papa"}
-              imgUrl={
-                "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
-              }
-            />
-          }
           className={"class1"}
           containerClassName={"container1"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
-        />
+        >
+          <ChildComponent
+            name={"Ankur Sarkar"}
+            description={"Tumhara Papa"}
+            imgUrl={
+              "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
+            }
+          />
+        </PinContainer>
       </div>
     </div>
   );
