@@ -24,9 +24,7 @@ const Credits = () => {
     <div className="flex flex-col gap-10 my-12">
       <div className="flex flex-row">
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Ankur Sarkar"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
@@ -40,15 +38,13 @@ const Credits = () => {
         </PinContainer>
 
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Vimal Sarkar"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
           <ChildComponent
-            name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            name={"Vimal Sarkar"}
+            description={"Ankur ka Beti"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }
@@ -56,15 +52,13 @@ const Credits = () => {
         </PinContainer>
 
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Ujjwal Sarkar"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
           <ChildComponent
             name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            description={"Ankur ka Beti"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }
@@ -73,15 +67,13 @@ const Credits = () => {
       </div>
       <div className="flex flex-row">
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Zia Tasneem"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
           <ChildComponent
-            name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            name={"Zia Tasneem"}
+            description={"Parhaku Larki"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }
@@ -89,15 +81,13 @@ const Credits = () => {
         </PinContainer>
 
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Raj Sarkar"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
           <ChildComponent
-            name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            name={"Raj Sarkar"}
+            description={"Ankur ka Beti"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }
@@ -105,15 +95,13 @@ const Credits = () => {
         </PinContainer>
 
         <PinContainer
-          title={"Title"}
-          className={"class1"}
-          containerClassName={"container1"}
+          title={"Sachin Kumar Sarkar"}
           href={"https://ankursarkar.tech/"}
           key={"key1"}
         >
           <ChildComponent
-            name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            name={"Sachin Kumar Sarkar"}
+            description={"Ankur ka Beti"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }

@@ -1,7 +1,6 @@
 import Spline from "@splinetool/react-spline";
 import Image from "next/image";
 import React from "react";
-
 const Header = () => {
   return (
     <header
@@ -32,7 +31,12 @@ const Header = () => {
           className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start"
           scene="https://prod.spline.design/pvM5sSiYV2ivWraz/scene.splinecode"
         /> */}
-        <Image src="/logo.gif" width={300} height={300} />
+        {/* <Image src="/jellyfish.svg" width={300} height={300} /> */}
+        <figure>
+          <object type="image/svg+xml" data="/jellyfish.svg" alt="Animated swimming jellyfish" img="" width="100%">
+            <img src="/jellyfish.svg" alt="Animated swimming jellyfish" className="lightense-target" />
+          </object>
+        </figure>
       </div>
     </header>
   );
