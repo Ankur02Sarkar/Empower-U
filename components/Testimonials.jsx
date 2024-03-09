@@ -48,8 +48,7 @@ let items = [
 
 const Testimonials = () => {
   return (
-    <div>
-      <h1 className="text-center text-6xl">Testimonials</h1>
+    <div className="mt-8">
       <AnimatedTooltip items={items} />
     </div>
   );

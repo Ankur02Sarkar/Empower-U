@@ -21,8 +21,7 @@ const ChildComponent = ({ name, description, imgUrl }) => {
 
 const Credits = () => {
   return (
-    <div className="flex flex-col gap-10">
-      <h1 className="text-center text-6xl">Credits</h1>
+    <div className="flex flex-col gap-10 my-12">
       <div className="flex flex-row">
         <PinContainer
           title={"Title"}
