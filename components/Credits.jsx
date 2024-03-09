@@ -30,7 +30,7 @@ const Credits = () => {
         >
           <ChildComponent
             name={"Ankur Sarkar"}
-            description={"Tumhara Papa"}
+            description={"Sabka Papa"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
             }
@@ -57,7 +57,7 @@ const Credits = () => {
           key={"key1"}
         >
           <ChildComponent
-            name={"Ankur Sarkar"}
+            name={"Ujjwal Sarkar"}
             description={"Ankur ka Beti"}
             imgUrl={
               "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png"
