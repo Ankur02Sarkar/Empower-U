@@ -71,10 +71,7 @@ const projects = [
 const page = () => {
   return (
     <div className="flex flex-row">
-      <SidebarComp />
-      <div className="max-w-5xl absolute right-0">
-        <HoverEffect items={projects} />
-      </div>
+      <HoverEffect items={projects} />
     </div>
   );
 };
