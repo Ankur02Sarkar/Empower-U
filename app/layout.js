@@ -1,8 +1,12 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ClerkProvider } from "@clerk/nextjs";
-import { FolderGit2, HomeIcon, MessageCircleIcon, UserIcon } from "lucide-react";
+import {
+  FolderGit2,
+  HomeIcon,
+  MessageCircleIcon,
+  UserIcon,
+} from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 
 const poppins = Poppins({
@@ -38,28 +42,24 @@ const navItems = [
   {
     name: "Projects",
     link: "/projects",
-    icon: (
-      <FolderGit2 className="h-4 w-4 text-neutral-500 dark:text-white" />
-    ),
+    icon: <FolderGit2 className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
 ];
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={poppins.variable}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <FloatingNav navItems={navItems} />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={poppins.variable}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <FloatingNav navItems={navItems} />
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

@@ -9,7 +9,6 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "../ModeToggle";
-import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export const FloatingNav = ({
     navItems,
@@ -69,12 +68,9 @@ export const FloatingNav = ({
                     </Link>
                 ))}
                 <ModeToggle />
-                <SignedIn>
-                    <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-                        <UserButton />
-                        <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-                    </button>
-                </SignedIn>
+                {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+                    <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+                </button> */}
             </motion.div>
         </AnimatePresence>
     );
