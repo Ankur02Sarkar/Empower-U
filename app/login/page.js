@@ -3,8 +3,12 @@ import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import "./login.css";
 import { Button } from "@/components/ui/button";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import { auth, googleAuthProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
@@ -32,13 +36,34 @@ const Login = () => {
 
   const handleLogin = () => {};
 
+  const handleLogout = async () => {
+    await signOut(auth);
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "/login"; // reload with refresh
+  };
+
+  const handleGoogleButton = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleAuthProvider);
+      console.log("result : ", result);
+      localStorage.setItem("token", result?.user?.accessToken);
+      localStorage.setItem("user", JSON.stringify(result?.user));
+      window.location.href = "/"; // reload with refresh
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className={`container ${isActive ? "active" : ""}`} id="container">
       <div className="form-container sign-up">
         <div className="formDiv">
           <h1 className="text-gray-500">Create Account</h1>
           <div className="social-icons flex flex-row gap-4 text-gray-500">
-            <Button className="hover:text-[#512da8] hover:border hover:border-[#512da8] flex flex-row gap-2">
+            <Button
+              onClick={handleGoogleButton}
+              className="hover:text-[#512da8] hover:border hover:border-[#512da8] flex flex-row gap-2"
+            >
               <span>Continue With Google</span>
               <FaGoogle size={27} />
             </Button>
@@ -67,7 +92,10 @@ const Login = () => {
         <div className="formDiv">
           <h1 className="text-gray-500">Sign In</h1>
           <div className="social-icons flex flex-row gap-4 text-gray-500">
-            <Button className="hover:text-[#512da8] hover:border hover:border-[#512da8] flex flex-row gap-2">
+            <Button
+              onClick={handleGoogleButton}
+              className="hover:text-[#512da8] hover:border hover:border-[#512da8] flex flex-row gap-2"
+            >
               <span>Continue With Google</span>
               <FaGoogle size={27} />
             </Button>

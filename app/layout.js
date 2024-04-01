@@ -5,6 +5,7 @@ import {
   FolderGit2,
   HomeIcon,
   MessageCircleIcon,
+  ProjectorIcon,
   UserIcon,
 } from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
@@ -30,12 +31,19 @@ const navItems = [
   {
     name: "Add Project",
     link: "/create",
-    icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    icon: (
+      <ProjectorIcon className="h-4 w-4 text-neutral-500 dark:text-white" />
+    ),
   },
   {
     name: "All Projects",
     link: "/projects",
     icon: <FolderGit2 className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Login",
+    link: "/login",
+    icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
 ];
 
