@@ -1,0 +1,198 @@
+[debug] [2024-03-27T21:12:17.204Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T21:12:17.213Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-03-27T21:12:17.214Z] CLI Version:   13.6.0
+[debug] [2024-03-27T21:12:17.214Z] Platform:      win32
+[debug] [2024-03-27T21:12:17.215Z] Node Version:  v20.9.0
+[debug] [2024-03-27T21:12:17.215Z] Time:          Thu Mar 28 2024 02:42:17 GMT+0530 (India Standard Time)
+[debug] [2024-03-27T21:12:17.216Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-27T21:12:17.234Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T21:12:17.235Z] > authorizing via signed-in user (sarkarrohonankur@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Web Development\empoweru
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-03-27T21:13:18.705Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-03-27T21:13:19.983Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-03-27T21:13:19.985Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project empower-u-eb365 (Empower U) 
+[info] 
+=== Firestore Setup
+[debug] [2024-03-27T21:13:24.824Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com [none]
+[debug] [2024-03-27T21:13:24.824Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com x-goog-quota-user=projects/empower-u-eb365
+[debug] [2024-03-27T21:13:27.059Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com 200
+[debug] [2024-03-27T21:13:27.060Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com [omitted]
+[debug] [2024-03-27T21:13:27.061Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) [none]
+[debug] [2024-03-27T21:13:29.130Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) 200
+[debug] [2024-03-27T21:13:29.131Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) {"name":"projects/empower-u-eb365/databases/(default)","uid":"f4fe359b-60fb-49e5-9426-99e55ee0e76a","createTime":"2024-03-27T20:58:20.562664Z","updateTime":"2024-03-27T20:58:20.562664Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-03-27T20:58:20.562664Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IPS/rIaulYUDMOiRqtWqlYUD"}
+[debug] [2024-03-27T21:13:29.132Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-03-27T21:13:29.133Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T21:13:29.134Z] > authorizing via signed-in user (sarkarrohonankur@gmail.com)
+[debug] [2024-03-27T21:13:29.134Z] [iam] checking project empower-u-eb365 for permissions ["firebase.projects.get"]
+[debug] [2024-03-27T21:13:29.137Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions [none]
+[debug] [2024-03-27T21:13:29.138Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions x-goog-quota-user=projects/empower-u-eb365
+[debug] [2024-03-27T21:13:29.138Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-03-27T21:13:30.903Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions 200
+[debug] [2024-03-27T21:13:30.903Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-03-27T21:14:01.406Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases pageSize=10&pageToken=
+[debug] [2024-03-27T21:14:03.263Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases 200
+[debug] [2024-03-27T21:14:03.263Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases {"releases":[{"name":"projects/empower-u-eb365/releases/cloud.firestore","rulesetName":"projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533","createTime":"2024-03-27T20:58:28.500966Z","updateTime":"2024-03-27T20:58:28.500966Z"},{"name":"projects/empower-u-eb365/releases/firebase.storage/empower-u-eb365.appspot.com","rulesetName":"projects/empower-u-eb365/rulesets/5820c612-9f23-4695-9762-055a7c103267","createTime":"2024-03-27T20:59:52.328974Z","updateTime":"2024-03-27T20:59:52.328974Z"}]}
+[debug] [2024-03-27T21:14:03.264Z] Found ruleset: projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533
+[debug] [2024-03-27T21:14:03.265Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 [none]
+[debug] [2024-03-27T21:14:04.650Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 200
+[debug] [2024-03-27T21:14:04.650Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-03-27T21:14:07.873Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-03-27T21:14:07.881Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-03-27T21:14:09.923Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-03-27T21:14:09.923Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-03-27T21:14:10.028Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-03-27T21:14:10.028Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/empower-u-eb365/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Hosting Setup
+[debug] [2024-03-27T21:14:10.035Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 [none]
+[debug] [2024-03-27T21:14:10.635Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 200
+[debug] [2024-03-27T21:14:10.635Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 {"projectId":"empower-u-eb365","projectNumber":"491011140973","displayName":"Empower U","name":"projects/empower-u-eb365","resources":{"hostingSite":"empower-u-eb365","storageBucket":"empower-u-eb365.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_c9951753-6412-4aa9-9141-5e1530ba3018"}
+[debug] [2024-03-27T21:15:41.625Z] SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at findDependency (C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\utils.js:188:23)
+    at discover (C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\vite\index.js:51:54)
+    at async C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\vite\index.js:36:63
+    at async discover (C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:47:32)
+    at async doSetup (C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\hosting\index.js:88:31)
+    at async init (C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:37:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-27T21:16:10.991Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T21:16:11.002Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ankur\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-03-27T21:16:11.004Z] CLI Version:   13.6.0
+[debug] [2024-03-27T21:16:11.006Z] Platform:      win32
+[debug] [2024-03-27T21:16:11.008Z] Node Version:  v20.9.0
+[debug] [2024-03-27T21:16:11.009Z] Time:          Thu Mar 28 2024 02:46:11 GMT+0530 (India Standard Time)
+[debug] [2024-03-27T21:16:11.009Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-27T21:16:11.041Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T21:16:11.042Z] > authorizing via signed-in user (sarkarrohonankur@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Web Development\empoweru
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-03-27T21:17:09.201Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-03-27T21:17:10.170Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-03-27T21:17:10.170Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project empower-u-eb365 (Empower U) 
+[info] 
+=== Firestore Setup
+[debug] [2024-03-27T21:17:11.855Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com [none]
+[debug] [2024-03-27T21:17:11.856Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com x-goog-quota-user=projects/empower-u-eb365
+[debug] [2024-03-27T21:17:13.942Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com 200
+[debug] [2024-03-27T21:17:13.943Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/empower-u-eb365/services/firestore.googleapis.com [omitted]
+[debug] [2024-03-27T21:17:13.945Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) [none]
+[debug] [2024-03-27T21:17:15.887Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) 200
+[debug] [2024-03-27T21:17:15.888Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default) {"name":"projects/empower-u-eb365/databases/(default)","uid":"f4fe359b-60fb-49e5-9426-99e55ee0e76a","createTime":"2024-03-27T20:58:20.562664Z","updateTime":"2024-03-27T20:58:20.562664Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-03-27T20:58:20.562664Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IPKauvKulYUDMMD86pmulYUD"}
+[debug] [2024-03-27T21:17:15.889Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-03-27T21:17:15.890Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T21:17:15.891Z] > authorizing via signed-in user (sarkarrohonankur@gmail.com)
+[debug] [2024-03-27T21:17:15.891Z] [iam] checking project empower-u-eb365 for permissions ["firebase.projects.get"]
+[debug] [2024-03-27T21:17:15.894Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions [none]
+[debug] [2024-03-27T21:17:15.894Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions x-goog-quota-user=projects/empower-u-eb365
+[debug] [2024-03-27T21:17:15.895Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-03-27T21:17:17.629Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions 200
+[debug] [2024-03-27T21:17:17.630Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower-u-eb365:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-03-27T21:17:24.644Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases pageSize=10&pageToken=
+[debug] [2024-03-27T21:17:26.251Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases 200
+[debug] [2024-03-27T21:17:26.252Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/releases {"releases":[{"name":"projects/empower-u-eb365/releases/cloud.firestore","rulesetName":"projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533","createTime":"2024-03-27T20:58:28.500966Z","updateTime":"2024-03-27T20:58:28.500966Z"},{"name":"projects/empower-u-eb365/releases/firebase.storage/empower-u-eb365.appspot.com","rulesetName":"projects/empower-u-eb365/rulesets/5820c612-9f23-4695-9762-055a7c103267","createTime":"2024-03-27T20:59:52.328974Z","updateTime":"2024-03-27T20:59:52.328974Z"}]}
+[debug] [2024-03-27T21:17:26.253Z] Found ruleset: projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533
+[debug] [2024-03-27T21:17:26.254Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 [none]
+[debug] [2024-03-27T21:17:26.842Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 200
+[debug] [2024-03-27T21:17:26.843Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/empower-u-eb365/rulesets/cbff7807-73fc-4f1a-920a-be795d5d3533 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-03-27T21:17:29.828Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-03-27T21:17:29.835Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-03-27T21:17:31.864Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-03-27T21:17:31.865Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-03-27T21:17:31.868Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-03-27T21:17:31.869Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/empower-u-eb365/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/empower-u-eb365/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Hosting Setup
+[debug] [2024-03-27T21:17:31.878Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 [none]
+[debug] [2024-03-27T21:17:32.675Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 200
+[debug] [2024-03-27T21:17:32.675Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/empower-u-eb365 {"projectId":"empower-u-eb365","projectNumber":"491011140973","displayName":"Empower U","name":"projects/empower-u-eb365","resources":{"hostingSite":"empower-u-eb365","storageBucket":"empower-u-eb365.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_c9951753-6412-4aa9-9141-5e1530ba3018"}
+[info] 
+[info] i  Detected a .git folder at C:\Web Development\empoweru 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=337936546&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-03-27T21:18:49.449Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-03-27T21:18:49.449Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-03-27T21:18:49.643Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-03-27T21:18:49.643Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-03-27T21:18:49.922Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-03-27T21:18:49.923Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-03-27T21:18:49.938Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-03-27T21:18:50.055Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-03-27T21:18:50.055Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"error":"bad_verification_code","error_description":"The code passed is incorrect or expired.","error_uri":"https://docs.github.com/apps/managing-oauth-apps/troubleshooting-oauth-app-access-token-request-errors/#bad-verification-code"}
+[debug] [2024-03-27T21:18:50.482Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-03-27T21:18:50.483Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Ankur02Sarkar","id":78259188,"node_id":"MDQ6VXNlcjc4MjU5MTg4","avatar_url":"https://avatars.githubusercontent.com/u/78259188?v=4","gravatar_id":"","url":"https://api.github.com/users/Ankur02Sarkar","html_url":"https://github.com/Ankur02Sarkar","followers_url":"https://api.github.com/users/Ankur02Sarkar/followers","following_url":"https://api.github.com/users/Ankur02Sarkar/following{/other_user}","gists_url":"https://api.github.com/users/Ankur02Sarkar/gists{/gist_id}","starred_url":"https://api.github.com/users/Ankur02Sarkar/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Ankur02Sarkar/subscriptions","organizations_url":"https://api.github.com/users/Ankur02Sarkar/orgs","repos_url":"https://api.github.com/users/Ankur02Sarkar/repos","events_url":"https://api.github.com/users/Ankur02Sarkar/events{/privacy}","received_events_url":"https://api.github.com/users/Ankur02Sarkar/received_events","type":"User","site_admin":false,"name":"Ankur Sarkar","company":"JIS College Of Engineering","blog":"ankursarkar.me","location":"Kalyani, West Bengal","email":null,"hireable":null,"bio":"Full Stack Developer (MERN) | GeeksForGeeks Rank 1 @jisce| Web Dev Lead @GDSCJISCE | Adept in Project Management & Teamwork | Passionate Learner","twitter_username":"Ankur02Sarkar","public_repos":102,"public_gists":1,"followers":19,"following":44,"created_at":"2021-01-30T11:13:13Z","updated_at":"2024-02-21T15:14:29Z","private_gists":1,"total_private_repos":11,"owned_private_repos":10,"disk_usage":646702,"collaborators":2,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as Ankur02Sarkar 
+[info] 
