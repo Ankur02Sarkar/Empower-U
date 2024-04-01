@@ -28,19 +28,12 @@ const navItems = [
     icon: <HomeIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "About",
-    link: "#about",
+    name: "Add Project",
+    link: "/create",
     icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "Contact",
-    link: "#contact",
-    icon: (
-      <MessageCircleIcon className="h-4 w-4 text-neutral-500 dark:text-white" />
-    ),
-  },
-  {
-    name: "Projects",
+    name: "All Projects",
     link: "/projects",
     icon: <FolderGit2 className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
