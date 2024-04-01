@@ -5,6 +5,7 @@ import "./login.css";
 import { Button } from "@/components/ui/button";
 import {
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -34,7 +35,23 @@ const Login = () => {
     }
   };
 
-  const handleLogin = () => {};
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("userCredential : ", userCredential);
+      const user = userCredential.user;
+      localStorage.setItem("token", user.accessToken);
+      localStorage.setItem("user", JSON.stringify(user));
+      window.location.href = "/"; // reload with refresh
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleLogout = async () => {
     await signOut(auth);
