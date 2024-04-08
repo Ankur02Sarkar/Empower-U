@@ -3,13 +3,6 @@ import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import "./login.css";
 import { Button } from "@/components/ui/button";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
-import { auth, googleAuthProvider } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
@@ -19,57 +12,20 @@ const Login = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("userCredential : ", userCredential);
-      const user = userCredential.user;
-      localStorage.setItem("token", user.accessToken);
-      localStorage.setItem("user", JSON.stringify(user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
+   
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("userCredential : ", userCredential);
-      const user = userCredential.user;
-      localStorage.setItem("token", user.accessToken);
-      localStorage.setItem("user", JSON.stringify(user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
+   
   };
 
   const handleLogout = async () => {
-    await signOut(auth);
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    window.location.href = "/login"; // reload with refresh
+    
   };
 
   const handleGoogleButton = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleAuthProvider);
-      console.log("result : ", result);
-      localStorage.setItem("token", result?.user?.accessToken);
-      localStorage.setItem("user", JSON.stringify(result?.user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
+    
   };
   return (
     <div className={`container ${isActive ? "active" : ""}`} id="container">
