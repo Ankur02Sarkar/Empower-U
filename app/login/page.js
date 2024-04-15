@@ -4,11 +4,14 @@ import { FaGoogle } from "react-icons/fa";
 import "./login.css";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-
+import { signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -17,6 +20,22 @@ const Login = () => {
       return;
     }
     try {
+      setIsDisabled(true);
+      const resUserExists = await fetch("api/userexists", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      });
+      const { user } = await resUserExists.json();
+      if (user) {
+        toast.error("User already exists");
+        setIsDisabled(false);
+        return;
+      }
       const res = await fetch("api/register", {
         method: "POST",
         headers: {
@@ -34,7 +53,9 @@ const Login = () => {
       } else {
         toast.error("Could not Register User");
       }
+      setIsDisabled(false);
     } catch (error) {
+      setIsDisabled(false);
       toast.error("Error during Registration");
     }
   };
@@ -45,11 +66,27 @@ const Login = () => {
       toast.error("Please fill in all fields");
       return;
     }
-    toast.success("Login succesful");
+    try {
+      const res = await signIn("credentials", {
+        email: email,
+        password: password,
+        redirect: false,
+      });
+      if (res.error) {
+        toast.error("Invalid Credentials");
+        setEmail("");
+        setPassword("");
+        return;
+      }
+      toast.success("Logged in Succesfully");
+      router.replace("create");
+    } catch (error) {
+      toast.error("Some Error Occured");
+    }
   };
 
   const handleLogout = async () => {
-    // window.location.href = "/login"; // reload with refresh
+    signOut();
     toast.success("Logged Out");
   };
 
@@ -86,7 +123,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button onClick={handleSignup}>Sign Up</button>
+          <button onClick={handleSignup} disabled={isDisabled}>
+            Sign Up
+          </button>
         </div>
       </div>
       <div className="form-container sign-in">
