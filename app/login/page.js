@@ -12,17 +12,45 @@ const Login = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    toast("Signup succesful");
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+    try {
+      const res = await fetch("api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+      if (res.ok) {
+        setEmail("");
+        setPassword("");
+        toast.success("User Registered");
+      } else {
+        toast.error("Could not Register User");
+      }
+    } catch (error) {
+      toast.error("Error during Registration");
+    }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    toast("Login succesful");
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+    toast.success("Login succesful");
   };
 
   const handleLogout = async () => {
     // window.location.href = "/login"; // reload with refresh
-    toast("Logged Out");
+    toast.success("Logged Out");
   };
 
   const handleGoogleButton = async () => {};

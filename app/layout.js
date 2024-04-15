@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
         >
           <FloatingNav navItems={navItems} />
           {children}
-          <Toaster />
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>
