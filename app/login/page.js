@@ -28,9 +28,9 @@ const Login = () => {
         }),
       });
       if (res.ok) {
+        toast.success("User Registered");
         setEmail("");
         setPassword("");
-        toast.success("User Registered");
       } else {
         toast.error("Could not Register User");
       }
