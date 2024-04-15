@@ -9,6 +9,7 @@ import {
   UserIcon,
 } from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
         >
           <FloatingNav navItems={navItems} />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

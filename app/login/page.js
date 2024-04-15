@@ -3,74 +3,30 @@ import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import "./login.css";
 import { Button } from "@/components/ui/button";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
-import { auth, googleAuthProvider } from "@/lib/firebase";
-import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const router = useRouter();
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("userCredential : ", userCredential);
-      const user = userCredential.user;
-      localStorage.setItem("token", user.accessToken);
-      localStorage.setItem("user", JSON.stringify(user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
+    toast("Signup succesful");
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("userCredential : ", userCredential);
-      const user = userCredential.user;
-      localStorage.setItem("token", user.accessToken);
-      localStorage.setItem("user", JSON.stringify(user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
+    toast("Login succesful");
   };
 
   const handleLogout = async () => {
-    await signOut(auth);
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    window.location.href = "/login"; // reload with refresh
+    // window.location.href = "/login"; // reload with refresh
+    toast("Logged Out");
   };
 
-  const handleGoogleButton = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleAuthProvider);
-      console.log("result : ", result);
-      localStorage.setItem("token", result?.user?.accessToken);
-      localStorage.setItem("user", JSON.stringify(result?.user));
-      window.location.href = "/"; // reload with refresh
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const handleGoogleButton = async () => {};
+
   return (
     <div className={`container ${isActive ? "active" : ""}`} id="container">
       <div className="form-container sign-up">
