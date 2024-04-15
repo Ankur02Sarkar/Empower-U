@@ -1,15 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 const Page = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [imgLink, setImgLink] = useState("");
+  const { data: session } = useSession();
 
   const handleAddProject = () => {};
   return (
     <div className="mt-8 h-[120vh]">
+      <h2>Welcome {session?.user?.email}</h2>
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Add Your Project
