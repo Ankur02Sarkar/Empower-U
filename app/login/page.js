@@ -6,12 +6,19 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-const Login = () => {
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+const Login = async () => {
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const session = await getServerSession(authOptions);
+  if (session) {
+    redirect("/"); // if logged in then redirect to home page
+  }
 
   const handleSignup = async (e) => {
     e.preventDefault();
