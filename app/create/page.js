@@ -1,7 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import React, { useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 const Page = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -9,7 +14,38 @@ const Page = () => {
   const [imgLink, setImgLink] = useState("");
   const { data: session } = useSession();
 
-  const handleAddProject = () => {};
+  const handleAddProject = async (e) => {
+    e.preventDefault();
+    if (!name || !description || !price || !imgLink) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+    try {
+      const res = await fetch("api/newproject", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          description,
+          price,
+          imgLink,
+        }),
+      });
+      if (res.ok) {
+        toast.success("Project Added");
+        setName("");
+        setDescription("");
+        setPrice("");
+        setImgLink("");
+      } else {
+        toast.error("Could not Add Project");
+      }
+    } catch (error) {
+      toast.error("Error Occured");
+    }
+  };
   return (
     <div className="mt-8 h-[120vh]">
       <h2>Welcome {session?.user?.email}</h2>
@@ -89,9 +125,7 @@ const Page = () => {
             </div>
           </div>
           <Button
-            onClick={() => {
-              handleAddProject;
-            }}
+            onClick={handleAddProject}
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           >
             Add
