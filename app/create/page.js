@@ -40,7 +40,7 @@ const Page = () => {
         setDescription("");
         setPrice("");
         setImgLink("");
-        router.replace("/projects");
+        router.push("/projects?refresh=true");
       } else {
         toast.error("Could not Add Project");
       }
