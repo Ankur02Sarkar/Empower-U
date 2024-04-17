@@ -21,7 +21,7 @@ const ProjectsPage = () => {
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/allprojects");
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/allprojects`);
         const projects = await res.json();
         console.log("projects : ", projects);
         if (projects) {
