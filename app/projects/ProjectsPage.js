@@ -21,8 +21,9 @@ const ProjectsPage = () => {
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {
-        const res = await fetch("api/allprojects");
+        const res = await fetch("http://localhost:3000/api/allprojects");
         const projects = await res.json();
+        console.log("projects : ", projects);
         if (projects) {
           const newProjects = projects?.allProjects?.map((project) => ({
             title: project.name,
@@ -31,7 +32,7 @@ const ProjectsPage = () => {
             img: project.thumbnailLink,
           }));
           setAllProjects(newProjects);
-          console.log("allProjects : ", newProjects);
+          console.log("newProjects : ", newProjects);
           toast.success("Fetched All Projects");
         } else {
           toast.error("Could not Fetch Projects");
