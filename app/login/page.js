@@ -9,16 +9,24 @@ import { useRouter } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-const Login = async () => {
+const Login = () => {
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const session = await getServerSession(authOptions);
-  if (session) {
-    redirect("/"); // if logged in then redirect to home page
-  }
+
+  // useEffect for checking if logged in then redirect to homepage
+  // useEffect(() => {
+  //   const checkSession = async () => {
+  //     const session = await getServerSession(authOptions);
+  //     if (session) {
+  //       redirect("/"); // if logged in then redirect to home page
+  //     }
+  //   };
+
+  //   checkSession();
+  // }, [router]);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -57,12 +65,14 @@ const Login = async () => {
         toast.success("User Registered");
         setEmail("");
         setPassword("");
+        router.push("/create?refresh=true");
       } else {
         toast.error("Could not Register User");
       }
       setIsDisabled(false);
     } catch (error) {
       setIsDisabled(false);
+      console.log(error);
       toast.error("Error during Registration");
     }
   };
@@ -86,8 +96,9 @@ const Login = async () => {
         return;
       }
       toast.success("Logged in Succesfully");
-      router.replace("create");
+      router.push("/create?refresh=true");
     } catch (error) {
+      console.log(error);
       toast.error("Some Error Occured");
     }
   };

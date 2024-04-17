@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useSession, signIn, signOut } from "next-auth/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -14,6 +14,17 @@ const Page = () => {
   const [imgLink, setImgLink] = useState("");
   const { data: session } = useSession();
   const router = useRouter();
+
+  useEffect(() => {
+    const currPageUrl = new URL(window.location.href);
+    const queryParams = new URLSearchParams(currPageUrl.search);
+    const refreshParam = queryParams.get("refresh"); // gets the value of "refresh" parameter
+    if (refreshParam === "true") {
+      const url = window.location.href;
+      const noRefreshUrl = url.replace("refresh=true", "");
+      window.location.href = noRefreshUrl;
+    }
+  }, []);
 
   const handleAddProject = async (e) => {
     e.preventDefault();
@@ -48,6 +59,7 @@ const Page = () => {
       toast.error("Error Occured");
     }
   };
+
   return (
     <div className="mt-8 h-[120vh]">
       <h2>Welcome {session?.user?.email}</h2>

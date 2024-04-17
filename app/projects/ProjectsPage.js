@@ -6,6 +6,18 @@ import { toast } from "sonner";
 
 const ProjectsPage = () => {
   const [allProjects, setAllProjects] = useState();
+
+  useEffect(() => {
+    const currPageUrl = new URL(window.location.href);
+    const queryParams = new URLSearchParams(currPageUrl.search);
+    const refreshParam = queryParams.get("refresh"); // gets the value of "refresh" parameter
+    if (refreshParam === "true") {
+      const url = window.location.href;
+      const noRefreshUrl = url.replace("refresh=true", "");
+      window.location.href = noRefreshUrl;
+    }
+  }, []);
+
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {
