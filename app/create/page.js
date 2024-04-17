@@ -13,6 +13,7 @@ const Page = () => {
   const [price, setPrice] = useState("");
   const [imgLink, setImgLink] = useState("");
   const { data: session } = useSession();
+  const router = useRouter();
 
   const handleAddProject = async (e) => {
     e.preventDefault();
@@ -39,6 +40,7 @@ const Page = () => {
         setDescription("");
         setPrice("");
         setImgLink("");
+        router.replace("/projects");
       } else {
         toast.error("Could not Add Project");
       }
