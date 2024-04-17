@@ -9,6 +9,8 @@ import {
   UserIcon,
 } from "lucide-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "./Providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,15 +53,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.variable}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <FloatingNav navItems={navItems} />
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <FloatingNav navItems={navItems} />
+            {children}
+            <Toaster richColors />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
