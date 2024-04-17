@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const ProjectsPage = () => {
-  const [allProjects, setAllProjects] = useState();
+  const [allProjects, setAllProjects] = useState([]);
 
   useEffect(() => {
     const currPageUrl = new URL(window.location.href);
@@ -31,6 +31,7 @@ const ProjectsPage = () => {
             img: project.thumbnailLink,
           }));
           setAllProjects(newProjects);
+          console.log("allProjects : ", newProjects);
           toast.success("Fetched All Projects");
         } else {
           toast.error("Could not Fetch Projects");
