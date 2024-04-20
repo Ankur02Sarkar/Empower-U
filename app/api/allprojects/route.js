@@ -7,7 +7,6 @@ export async function GET() {
     console.log("Connected to MongoDB.");
 
     const allProjects = await Project.find();
-
     return NextResponse.json({ allProjects }, { status: 201 });
   } catch (error) {
     console.error("Error fetching projects:", error);

@@ -38,6 +38,7 @@ const ProductPage = () => {
 
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
+  const [updatedItem, setUpdatedItem] = useState();
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -60,10 +61,10 @@ const ProductPage = () => {
         "https://pbs.twimg.com/profile_images/1097556482353025025/9qBkSBQW_400x400.png",
       email: email,
       handler: function (response) {
-        // Validate payment at server - using webhooks is a better idea.
-        alert("Razorpay Response: " + response.razorpay_payment_id);
-        //alert(response.razorpay_order_id);
-        //alert(response.razorpay_signature);
+        const newItem = currItem;
+        currItem.totalFunding = currItem.totalFunding - amount;
+        newItem.totalFunding = newItem.totalFunding - amount;
+        setUpdatedItem(newItem);
       },
       prefill: {
         email: email,
@@ -82,6 +83,37 @@ const ProductPage = () => {
     setEmail("");
     setAmount("");
   };
+
+  useEffect(() => {
+    const updateProject = async (id) => {
+      if (id) {
+        console.log("updateProject id : ", id);
+        try {
+          const res = await fetch(
+            `${window.location.origin}/api/update/${id}`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                price: updatedItem.totalFunding,
+              }),
+            }
+          );
+          console.log("res : ", res);
+          if (res.ok) {
+            toast.success("Project Updated");
+          } else {
+            toast.error("Could not Update Project");
+          }
+        } catch (error) {
+          toast.error("Error Occured");
+        }
+      }
+    };
+    updateProject(currItem?._id);
+  }, [updatedItem]);
 
   return (
     <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center bg-gray-900 text-white">
