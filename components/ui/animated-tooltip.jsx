@@ -15,6 +15,7 @@ export const AnimatedTooltip = ({ items }) => {
   const [heading, setHeading] = useState(items[0].name)
   const [description, setDescription] = useState(items[0].designation)
   const [imgUrl, setImgUrl] = useState(items[0].image)
+  const [bodyText, setBodyText] = useState(items[0].bodyText)
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
   // rotate the tooltip
@@ -91,7 +92,7 @@ export const AnimatedTooltip = ({ items }) => {
           </div>
         ))}
       </div>
-      <ThreeDCardDemo heading={heading} description={description} imgUrl={imgUrl} />
+      <ThreeDCardDemo heading={heading} description={description} imgUrl={imgUrl} bodyText={bodyText}/>
     </div>
   );
 };
