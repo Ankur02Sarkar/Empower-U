@@ -10,7 +10,7 @@ const PricingCard = ({ title, price, benefits, oneliner }) => {
           <p className="text-sm text-zinc-500">{oneliner}</p>
         </div>
         <p className="text-4xl font-bold">
-          ${price}
+          ₹{price}
           <span className="text-sm font-normal text-zinc-500">/ Month</span>
         </p>
       </div>
