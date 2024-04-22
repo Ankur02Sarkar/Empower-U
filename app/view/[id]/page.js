@@ -151,7 +151,9 @@ const ProductPage = () => {
           />
           <div className="flex flex-row items-center gap-12">
             <button className="bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full">
-              Problem Statement
+              <a href={`${currItem?.gitLink}`} target="_blank">
+                Problem Statement
+              </a>
             </button>
             <button
               onClick={handlePayment}
