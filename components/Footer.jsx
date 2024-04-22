@@ -14,8 +14,8 @@ const Footer = () => {
           <div className="">
             <h3 className="text-xl font-bold mb-4">EmpowerU</h3>
             <p className="mb-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
-              ea quo ex ullam laboriosam magni totam, facere eos iure voluptate.
+            Empower U is an AI-powered Fundraising optimization tool that provides 
+            data-driven insights to boost your Project.
             </p>
             <div className="flex space-x-4">
               <FaFacebook />
@@ -55,9 +55,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="text-lg font-semibold mb-4">Contact</h5>
+          <h5 className="text-lg font-semibold mb-4">ContactUs</h5> 
             <p>
-              <i className="fas fa-phone-volume"></i> +91 173314
+              <i className="fas fa-phone-volume"></i> +91 1733146969
             </p>
             <p>
               <i className="fas fa-envelope"></i> empoweru23@gmail.com

@@ -6,23 +6,23 @@ import {
 
 const infoCards = [
   {
-    title: "Increased Sales",
+    title: "Project Showcase",
     bodyText:
-      " Insightful's predictive analytics identify high-value prospects for targeted pitches, boosting conversion rates and sales by up to 20%.",
+      "Showcase your project by joining us as we embark on this journey of understanding EmpowerU, a platform that is not just about giving but also about empowering and rewarding.",
     icon: ArrowUpNarrowWide,
     id: 1,
   },
   {
-    title: "No Time Wasted",
+    title: "Advancing AI",
     bodyText:
-      "Insightful automates personalized content creation, freeing up sales reps' time for revenue-focused activities and increased productivity.",
+      "The latest AI advancements will be incorporated to improve matchmaking between donors and recipients, optimize donation processes, and provide predictive analytics to guide user decisions.",
     icon: AlarmClockOff,
     id: 2,
   },
   {
-    title: "Decreased Churn",
+    title: "Crypto Initiative",
     bodyText:
-      " Insightful's AI lead engagement and renewal tools reduce customer churn by up to 30% through consistent outreach and retention opportunities.",
+      " In an era where digital currencies are gaining prominence, EmpowerU embraces this trend by introducing a crypto initiative. This initiative allows individuals to contribute to projects using traditional currency as well as cryptocurrencies like Bitcoin.",
     icon: ArrowDownNarrowWide,
     id: 3,
   },
