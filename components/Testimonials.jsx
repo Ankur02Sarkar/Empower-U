@@ -15,7 +15,7 @@ let items = [
     designation: "Contributor",
     image:
       "https://res.cloudinary.com/ankur02sarkar/image/upload/v1711217520/IMG-20240323-WA0058-h-aWe-B_M-transformed_dzde7y.png",
-    bodyText:"Hello miss"
+    bodyText:""
     
   },
   {
