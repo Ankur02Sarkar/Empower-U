@@ -35,7 +35,7 @@ const Credits = () => {
   const data = [
     {
       title: "Ankur Sarkar",
-      href: "https://github.com/mozilla-mobile/firefox-ios",
+      href: "https://ankursarkar.tech/",
       name: "Ankur Sarkar",
       description: "Full Stack Web Developer",
       imgUrl: "https://res.cloudinary.com/ankur02sarkar/image/upload/v1709941051/Ankur_fzogyv.png",
