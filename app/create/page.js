@@ -12,6 +12,7 @@ const Page = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [imgLink, setImgLink] = useState("");
+  const [gitLink, setGitLink] = useState("");
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -43,6 +44,7 @@ const Page = () => {
           description,
           price,
           imgLink,
+          gitLink
         }),
       });
       if (res.ok) {
@@ -51,6 +53,7 @@ const Page = () => {
         setDescription("");
         setPrice("");
         setImgLink("");
+        setGitLink("");
         router.push("/projects?refresh=true");
       } else {
         toast.error("Could not Add Project");
@@ -135,6 +138,23 @@ const Page = () => {
                 value={imgLink}
                 onChange={(e) => setImgLink(e.target.value)}
                 placeholder="Image Link"
+              />
+            </div>
+            
+            <label
+              className="text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              htmlFor="price"
+            >
+              Github Repo
+            </label>
+            <div className="p-[2px] rounded-lg transition duration-300 group/input">
+              <input
+                className="flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-700)] group-hover/input:shadow-none transition duration-400"
+                id="link"
+                type="url"
+                value={gitLink}
+                onChange={(e) => setGitLink(e.target.value)}
+                placeholder="Github Link"
               />
             </div>
           </div>
